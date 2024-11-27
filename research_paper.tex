@@ -1,0 +1,284 @@
+\documentclass[twocolumn,apj,numberedappendix,appendixfloats]{openjournal}
+% Available options:
+% [twocolumn] - two-column mode
+% [onecolumn] - (default) main text in one-column mode
+% [apj]       - typeset in the style of ApJ.
+% [apjl]      - (default) typeset in the style of ApJ Letters 
+% [tighten]   - some adjustments to approximate grid typesetting
+% [numberedappendix]   - number appendix sections as A, B, etc
+% [appendixfloats]  - use separate numbering for floats within appendix
+% [twocolappendix]  - make appendix in two-col mode in a two-col paper
+
+
+%%%%% PACKAGES %%%%%
+% Optional useful packages
+\usepackage{newtxtext,newtxmath,amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{gensymb}
+\usepackage{CJK}
+\usepackage{tabularx}
+\usepackage{orcidlink}
+\hypersetup{
+    unicode, 
+    colorlinks=true,
+    linkcolor=linkcolor,
+    citecolor=linkcolor,
+    filecolor=linkcolor,
+    urlcolor=linkcolor,
+}
+\definecolor{linkcolor}{rgb}{0.0,0.3,0.5}
+
+
+% \usepackage{newtxtext,newtxmath,amsmath}
+% \usepackage{xcolor}
+% \usepackage{textgreek}
+% \usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+% \usepackage{hyperref}
+% \hypersetup{
+%     unicode, 
+%     colorlinks=true,
+%     linkcolor=linkcolor,
+%     citecolor=linkcolor,
+%     filecolor=linkcolor,
+%     urlcolor=linkcolor,
+% }
+% \usepackage{color,colortbl}
+% \definecolor{linkcolor}{rgb}{0.0,0.3,0.5}
+% \usepackage{orcidlink}
+
+%%%%% COMMANDS %%%%%
+% Optional useful commands
+
+% I use the following command to indicate comments with \SB{My comment here}.
+% Before submission, you should comment this \newcommand out,
+% to make sure you do not have any leftover comments!
+\newcommand{\SB}[1]{{\textcolor{purple}{SB: #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{Interesting and descriptive title of your research}
+
+\author{\vspace{-1.5cm}YOUR NAME HERE$^{1,*}$}
+\author{Sven Buder$^{1,2,*}$\orcidlink{0000-0002-4031-8553}}
+
+% Adding another author would go like:
+% \author{FirstName LastName$^{3}$\orcidlink{0000-0000-0000-0000}}
+
+\affiliation{$^{1}$Research School of Astronomy and Astrophysics, Australian National University, Canberra, ACT 2611, Australia}
+\affiliation{$^{2}$ARC Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D), Australia}
+
+
+\thanks{E-mail: youremail@anu.edu.au}
+\thanks{$^*$Australian Research Council DECRA Fellow},
+
+\begin{abstract}
+The abstract should condense the main content of the paper to less than 1920 characters (with spaces) and make the reader want to actually read the paper. Summarize your work with at least one sentence for: context (bigger picture - to get people interested), aims (to tell people what you want to do), methods (to tell people how you do it), results (to give people important results, like numbers or rejected hypotheses), and conclusions (to explain the impact, that is, what that means for the bigger picture problem).
+\end{abstract}
+
+% Write your keywords here
+\begin{keywords}
+    {Choose up to 6 keywords from \href{https://academic.oup.com/DocumentLibrary/mnras/keywords.pdf}{here} and write them like: keyword1 -- keyword2.}
+\end{keywords}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Before you get started}
+
+\subsection{How to do science and write papers}
+When writing a scientific paper and doing research, always keep the scientific method in mind! You want your hypotheses be laid out clearly. Most importantly, you want to perform scientific research that is reproducible and statistically as well as logically sound! People may dispute the conclusions that you draw from your analyses, so always back up statements with logical and analytical arguments or at least with quantities and uncertainties. If you submit your research paper to a journal, an anonymous referee will be asked to review your study with the following questions in mind \citep{Bertout2004}:
+\begin{enumerate}
+    \item Why should this paper be published?
+    \item Are the assumptions spelled out clearly?
+    \item Are the methods fully described?
+    \item Are the new results adequately emphasized?
+    \item Are all the figures and tables necessary and properly laid out?
+    \item \dots
+    \item (different journals also may ask different questions)
+\end{enumerate}
+
+The journals have a typical format of sections with introduction, data, methodology/analysis, results, discussion, conclusions. For ease, I have already created sections on clear pages that you can adjust (take out the clearpage command to save white space).
+
+\subsection{Coding and writing collaboratively}
+
+Because you often do research with others (either your supervisors or a collaboration), it is vital that you are able to share your results, code, and manuscript. There are many ways to do that, including sending PDFs via emails.
+
+A common way is, however, to write code on your computer and then synchronize it with a server of an online service such as \url{https://github.com}. This is in fact where this template is stored at\footnote{\url{https://github.com/svenbuder/template_ojap}}. I would recommend to create a private repository for your research project to upload your code, figures, and manuscript.
+
+For writing, I use a hybrid of writing on my computer and the collaborative online service \url{https://www.overleaf.com/}. You can get free educational/professional versions of both GitHub and Overleaf with your ANU account and create private, that is, non-public repositories -- and even better: synchronize your GitHub repository with your Overleaf project. Once you do that, you can invite collaborators to your project and make sure they always see your latest code and manuscript. Once you are ready to publicly share your code and manuscript, you simply just need to switch your repository type from \textit{private} to \textit{public}. This is how people can for example access the code and figures of my latest paper \citep{Buder2024} at \href{https://github.com/svenbuder/Accretion_Clues_ObsSim}{this} GitHub repository.
+
+\clearpage
+\section{Introduction}
+\label{sec:introduction}
+
+The introduction is a condensed version of your literature review. You should start with the bigger picture and tell a story that naturally leads to your hypotheses and guides the structure of your paper.
+
+Remember to start from the big picture and the big questions that we want to answer, and use the introduction to reach the specific questions that you want to answer (and later link back) -- like an hourglass. The Decadal Plan of Australian Astronomy 2016--2025 \textit{Australia in the era of global astronomy}\footnote{You can find it \href{https://www.science.org.au/supporting-science/science-sector-analysis/reports-and-publications/decadal-plan-australian-astronomy-2016-25}{here}.} for example identifies 6 major questions that Australian astronomers want to tackle in the next decade: 
+\begin{enumerate}
+    \item How did the first stars and galaxies transform the Universe?
+    \item What is the nature of dark matter and dark energy?
+    \item How do galaxies form and evolve across cosmic time?
+    \item How do stars and planets form?
+    \item How are elements produced by stars and recycled through galaxies?
+    \item What is the nature of matter and gravity at extreme densities?
+\end{enumerate}
+
+\subsection{Scientific motivation}
+
+\textit{The introduction should state clearly why the study was started and place the research in a broad context e.g. by referring to previous work of relevance. The introduction should not contain the conclusions.}\footnote{Taken from \href{https://www.aanda.org/doc_journal/instructions/aadoc.pdf}{these instructions}.}.
+
+It can be difficult to start, so here are a few pointers. Start by reading review papers in the specific area of your research. There is typically one ground-breaking or influential paper that is motivating your work (e.g. some new data or some new theoretical prediction). Read that paper too.
+
+The best way to find papers is via \href{https://ui.adsabs.harvard.edu}{the ADS service}. This service provides the link to the papers, publishers, and the \texttt{bibtex} information (on left side under \textit{Export Citation}). Add this \texttt{bibtex} information to a \LaTeX bibliography (\texttt{*.bib}) file in the same directory as your manuscript. I attach an example with 2 entries as \texttt{bib.bib}, where I have renamed the automatic citation keys to \textit{LastnameYear}. I personally like to organise these citations with a program called \href{https://bibdesk.sourceforge.io}{BibDesk} on my Apple (there are similar programs available for Windows/Linux).
+
+Once added, you can cite papers in 2 different ways: in-line with parentheses after the authors -- for example for research by \citet{Buder2024b} -- or with authors within the parentheses at the end of a statement or paragraph that is backed up by the citation \citep{Buder2024b}. You can also imagine citing multiple papers at once \citep[e.g.][]{Buder2018, Buder2019, Buder2021, Buder2022, Buder2024b}.
+
+\subsection{Hypotheses} \label{sec:hypotheses}
+
+Here you should clearly point out the hypotheses of your research, that is, the specific questions you want to actually answers. I have found this to be incredibly useful when figuring out how to set up my research and later use these hypotheses as subsection titles for the discussion -- after all: these are the questions that you want to discuss in light of your research. I specifically like to enumerate the hyptotheses (which I phrase as open questions):
+
+\begin{enumerate}
+    \item How ...?
+    \item How much ...?
+    \item When ...?
+    \item Which ...?
+    \item Where ...?
+\end{enumerate}
+
+If you use data such as observational data or simulations, you also want to make sure that you mention why the data that you will use in your work is (the most) useful in the introduction.
+
+\subsection{Structure of the paper}
+
+The paper is structured as follows: Section~\ref{sec:data} describes the data of \dots. Section~\ref{sec:analysis} analyses \dots. We discuss our analysis in the context of our hypotheses in Section~\ref{sec:discussion} and bundles our results into an overarching conclusion in Section~\ref{sec:conclusions}.
+
+At the end of the day, I often take the subsection headings out. But they are useful for getting started.
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data} \label{sec:data}
+
+\subsection{Observations/Simulations}
+
+Here you want to describe the most important (!) details about the data. For example for observational data from the stellar spectroscopic GALAH survey \citep{Buder2018, Buder2021, Buder2024b} you should describe the data was collected and analyzed. You want to include where people can access the data that you are using (remember: reproducibility). For simulation data, you should describe the most important information about the simulation setup and tell people where they can get further information.
+
+\subsection{Sample selection}
+
+You also want to include *all* information on the sample selection or adjustments that you have made to the data. If you have neglected stars above a certain temperature or spectra below a certain signal-to-noise ratio, write that down here (remember: reproducibility). Imagine writing down a summary of your python notebook 
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analysis} \label{sec:analysis}
+
+We know the questions we want to answer and have collected the data that we will use to answer the questions. Here you want to describe now the specific \textit{advanced} analyses that you perform. Depending on your hypotheses, you might want to structure the analysis subsections and use informative subsection titles.
+
+At the beginning of each larger section, you also want to inform the reader what you will do in this section: We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{sec:analysis_comparison}, we then compare these fit results with theoretical predictions, which we of course have introduced in Sec.~\ref{sec:introduction}. We will use equations, such as Eq.~\ref{eq:emc2}, 
+
+\subsection{Fitting a function to the data} \label{sec:analysis_fitting}
+
+You want to describe your detailed setup to allow others to reproduce your work. If you fit a function, you want to include a functional form, but also the fitting function that you have used, for example \texttt{scipy.optimize.curve\_fit} \citep{Scipy}. You also want to include any adjustments that you have made from the default fitting setup (remember: reproducibility).
+
+Because we want to use quantities, it can come in handy to put them into tables, such as Tab.~\ref{table:table}.
+
+It is, however, often much easier (and impressive) to show the results of your analysis in a figure and then describe this figure (see for example Fig.~\ref{fig:fig}).
+
+\begin{table}
+    \centering
+    \caption{Parameters used in your paper.}
+    \begin{tabular}{ c c }  
+        Parameter & Prior \\
+        \hline \hline     
+        {\boldmath$\alpha$} & $\left[ 10^{-3}, 10 \right]$ \\
+        {\boldmath$\beta$} & $\left[ 0, 1 \right]$ \\   
+        \hline \hline  
+    \end{tabular}  
+    \label{table:table}
+\end{table}
+
+\begin{center}
+    \begin{figure}[!t]
+        \centering
+    	\includegraphics[scale=0.3]{figures/probdist.png}
+    	\caption{Example plot that still needs a descriptive caption.}
+        \label{fig:fig}
+    \end{figure}
+\end{center}
+
+
+\subsection{Comparing the fit to theoretical predictions} \label{sec:analysis_comparison}
+
+A theoretical prediction could be made in the form of an equation, such as Eq.~\ref{eq:emc2}:
+\begin{equation}
+    E = m c^2, \label{eq:emc2}
+\end{equation}
+where $E$ is energy, $m$ is mass, and $c$ is the speed of light.
+
+\subsection{How to refer to equations, tables, and figures}
+
+Analyses typically include formulae (such as ), tables (such as Tab.~\ref{table:table}), and a lot of nice figures (such as Fig.~\ref{fig:fig}).
+
+
+
+Until here, your manuscript is purely based on techniques. Note: Even random processes, like Monte Carlo sampling can be fixed for better reproducability, but defining a \texttt{numpy.random.seed(PutIntegerValueHere)}. If you have done your job right, anyone should be able to take your code and run it on their computer to get the same results and plots as you (within machine precision). This also means: Write your code with useful comments, so that people can follow your steps.
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion} \label{sec:discussion}
+
+From here on, the exciting but debatable part of science begins: discussing what the results mean. Remember: People may dispute the conclusions that you draw from your analyses, so always back up statements with logical and analytical arguments or at least with quantities and uncertainties.
+
+Because we have identified (and likely iteratively refined) hypotheses in the introduction (Sec.~\ref{sec:hypotheses}), we can now easily return to them and discuss them in individual subsections.
+
+\subsection{Discussion of hypothesis 1}
+
+\subsection{Discussion of hypothesis 2}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions} \label{sec:conclusions}
+
+Because your analysis and discussion have stretched over multiple pages, and the abstract only allows you up to 250 words, this is the place where you can summarize the main results and conclusions that you have drawn, and put them into the context of the big picture problem that you wanted to contribute to.
+
+\subsection{Take-away} \label{sec:conclusions_takeaway}
+
+\subsection{Future research} \label{sec:conclusions_future_research}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+
+Acknowledge support (if you got any).
+
+SB acknowledges support from the Australian Research Council under grant numbers DE240100150 and CE170100013.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Data Availability}
+
+All code to reproduce the analysis and figures can be publicly accessed via \url{https://github.com/USERNAME/REPOSITORYNAME}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{mnras}
+\bibliography{bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{appendix}
+
+%\section{Interesting information that is not vital for the main story of your paper}
+
+%\end{appendix}
+
+\end{document}
