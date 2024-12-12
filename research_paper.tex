@@ -190,7 +190,7 @@ For this project, we use data from .... We introduce the data in Section~\ref{se
 
 \comment{At the beginning of each larger section, you also want to inform the reader what you will do in this section:}
 
-We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{sec:analysis_comparison}, we then compare these fit results with theoretical predictions, which we of course have introduced in Sec.~\ref{sec:introduction}. In Sec.~\ref{sec:analysis_reproducibility}, we add a note on reproducibility. \SB{Do not forget to delete this sentence.}
+We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{sec:analysis_comparison}, we then compare these fit results with theoretical predictions, which we of course have introduced in Sec.~\ref{sec:introduction}. In Sec.~\ref{sec:analysis_reproducibility}, we add a note on reproducibility. \SB{Do not forget to delete the last sentence.}
 
 \subsection{Fitting a function to the data} \label{sec:analysis_fitting}
 
@@ -203,15 +203,12 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 \input{tables/table_sin_fit_x_y}
 
 
-\begin{center}
-    \begin{figure}[!t]
-        \centering
-    	\includegraphics[scale=0.3]{figures/sin_fit_x_y.png}
-    	\caption{Example plot that still needs a descriptive caption.}
-        \label{fig:sin_fit_x_y}
-    \end{figure}
-\end{center}
-
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figures/sin_fit_x_y.png}
+    \caption{Example plot of data $X$ vs. $Y$ (blue dots) and a red line showing the best-fitting $\sin$-function (Eq.~\ref{eq:sine}).}
+    \label{fig:sin_fit_x_y}
+\end{figure}
 
 \subsection{Comparing the fit to theoretical predictions} \label{sec:analysis_comparison}
 
@@ -221,7 +218,9 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 \end{equation}
 where $A$ is the amplitude of the sine wave, $\omega$ is the angular frequency, $\phi$ is the phase shift, and $\mu$ is the vertical offset or mean value around which the sine wave oscillates.
 
-\comment{Because of the input function of \LaTeX, you can also save specific results as tex-text and import it later. For example the result of the amplitude was $A$ was $A = \input{tex_text/parameter_amplitude}\,\mathrm{unit}$}
+\comment{Because of the input function of \LaTeX, you can also save specific results as tex-text and import it later. For example the result of the amplitude was $A$ might change if you change the data. But the following text would also be updated (and avoid copy-pasting!):}
+
+We find an amplitude of $A = \input{tex_text/parameter_amplitude}\,\mathrm{unit}$ and an offset of $\mu = \input{tex_text/parameter_offset}\,\mathrm{unit}$.
 
 \subsection{A note on reproducibility (again)}\label{sec:analysis_reproducibility}
 
