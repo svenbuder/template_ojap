@@ -196,36 +196,12 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 
 \comment{You want to describe your detailed setup to allow others to reproduce your work. If you fit a function, you want to include a functional form, such as Eq.~\ref{eq:sine}, but also the optimization function that you have used, for example \texttt{scipy.optimize.curve\_fit} \citep{Scipy}. You also want to include any adjustments that you have made from the default fitting setup (remember: reproducibility).}
 
-\comment{Because we want to use quantities, it can come in handy to put them into tables, such as Tab.~\ref{table:table}. It is, however, often much easier (and impressive) to show the results of your analysis in a figure and then describe this figure (see for example Fig.~\ref{fig:fig}).}
+\comment{Because we want to use quantities, it can come in handy to put them into tables, such as Tab.~\ref{tab:sin_fit_x_y}. It is, however, often much easier (and impressive) to show the results of your analysis in a figure and then describe this figure (see for example Fig.~\ref{fig:fig}).}
 
-\begin{table}
-\centering
-\caption{Fitting a sin-function to randomly, but reproducably created data.}
-\label{tab:sin_fit_x_y}
-\begin{tabular}{cc}
-\hline\hline
-Parameter & Value \\
-\hline
-$A$ & $1.011 \pm 0.014$ \\
-$\omega$ & $0.9978 \pm 0.0043$ \\
-$\phi$ & $0.017 \pm 0.026$ \\
-$\mu$ & $-0.001 \pm 0.010$ \\
-\hline\hline
-\end{tabular}
-\end{table}
+% Here we input our automatically create table for the sin-fit.
+% Remember: It's label was \label{tab:sin_fit_x_y}
+\input{tables/table_sin_fit_x_y}
 
-\begin{table}
-    \centering
-    \caption{Parameters used in your paper.}
-    \begin{tabular}{ c c }  
-        Parameter & Prior \\
-        \hline \hline     
-        {\boldmath$\alpha$} & $\left[ 10^{-3}, 10 \right]$ \\
-        {\boldmath$\beta$} & $\left[ 0, 1 \right]$ \\   
-        \hline \hline  
-    \end{tabular}  
-    \label{table:table}
-\end{table}
 
 \begin{center}
     \begin{figure}[!t]
@@ -244,6 +220,8 @@ $\mu$ & $-0.001 \pm 0.010$ \\
     y(x) = A \sin(\omega x + \phi) + \mu, \label{eq:sine}
 \end{equation}
 where $A$ is the amplitude of the sine wave, $\omega$ is the angular frequency, $\phi$ is the phase shift, and $\mu$ is the vertical offset or mean value around which the sine wave oscillates.
+
+\comment{Because of the input function of \LaTeX, you can also save specific results as tex-text and import it later. For example the result of the amplitude was $A=$\input{tex_text/parameter_amplitude}
 
 \subsection{A note on reproducibility (again)}\label{sec:analysis_reproducibility}
 
@@ -302,7 +280,7 @@ To conclude our study, we first iterate the main take-away of our research in Se
 
 We have analyzed .... and find the following main results:
 \begin{itemize}
-    \item We have found a linear relationship between \textit{x} and \textit{y} (Section~\ref{sec:analysis_fitting} and Table~\ref{table:table}).
+    \item We have found a linear relationship between \textit{x} and \textit{y} (Section~\ref{sec:analysis_fitting} and Table~\ref{tab:sin_fit_x_y}).
     \item Our comparison of theoretical predictions with observations of  \textit{x} suggests ... (Fig.~\ref{fig:fig}).
 \end{itemize}
 
