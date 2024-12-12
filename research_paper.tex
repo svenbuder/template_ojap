@@ -196,7 +196,7 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 
 \comment{You want to describe your detailed setup to allow others to reproduce your work. If you fit a function, you want to include a functional form, such as Eq.~\ref{eq:sine}, but also the optimization function that you have used, for example \texttt{scipy.optimize.curve\_fit} \citep{Scipy}. You also want to include any adjustments that you have made from the default fitting setup (remember: reproducibility).}
 
-\comment{Because we want to use quantities, it can come in handy to put them into tables, such as Tab.~\ref{tab:sin_fit_x_y}. It is, however, often much easier (and impressive) to show the results of your analysis in a figure and then describe this figure (see for example Fig.~\ref{fig:fig}).}
+\comment{Because we want to use quantities, it can come in handy to put them into tables, such as Tab.~\ref{tab:sin_fit_x_y}. It is, however, often much easier (and impressive) to show the results of your analysis in a figure and then describe this figure (see for example Fig.~\ref{fig:sin_fit_x_y}).}
 
 % Here we input our automatically create table for the sin-fit.
 % Remember: It's label was \label{tab:sin_fit_x_y}
@@ -206,9 +206,9 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 \begin{center}
     \begin{figure}[!t]
         \centering
-    	\includegraphics[scale=0.3]{figures/probdist.png}
+    	\includegraphics[scale=0.3]{figures/sin_fit_x_y.png}
     	\caption{Example plot that still needs a descriptive caption.}
-        \label{fig:fig}
+        \label{fig:sin_fit_x_y}
     \end{figure}
 \end{center}
 
@@ -221,7 +221,7 @@ We fit a function to our data (Sec.~\ref{sec:analysis_fitting}). In Sec.~\ref{se
 \end{equation}
 where $A$ is the amplitude of the sine wave, $\omega$ is the angular frequency, $\phi$ is the phase shift, and $\mu$ is the vertical offset or mean value around which the sine wave oscillates.
 
-\comment{Because of the input function of \LaTeX, you can also save specific results as tex-text and import it later. For example the result of the amplitude was $A=$\input{tex_text/parameter_amplitude}
+\comment{Because of the input function of \LaTeX, you can also save specific results as tex-text and import it later. For example the result of the amplitude was $A$ was $A = \input{tex_text/parameter_amplitude}\,\mathrm{unit}$}
 
 \subsection{A note on reproducibility (again)}\label{sec:analysis_reproducibility}
 
@@ -281,7 +281,7 @@ To conclude our study, we first iterate the main take-away of our research in Se
 We have analyzed .... and find the following main results:
 \begin{itemize}
     \item We have found a linear relationship between \textit{x} and \textit{y} (Section~\ref{sec:analysis_fitting} and Table~\ref{tab:sin_fit_x_y}).
-    \item Our comparison of theoretical predictions with observations of  \textit{x} suggests ... (Fig.~\ref{fig:fig}).
+    \item Our comparison of theoretical predictions with observations of  \textit{x} suggests ... (Fig.~\ref{fig:sin_fit_x_y}).
 \end{itemize}
 
 \subsection{Future research} \label{sec:conclusions_future_research}
