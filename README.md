@@ -1,4 +1,4 @@
-# An adjusted template of the Open Journal of Astrophysics for new students
+# An adjusted template of the Open Journal of Astrophysics for RSAA students
 
 This template is an adjusted version of the template provided by the Journal here: https://astro.theoj.org/for-authors.
 
